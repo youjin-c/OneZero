@@ -1,5 +1,30 @@
 # OneZero
 
-One Zero is an interactive installation that I and Dongphil Yoo presented at 2018 ITP spring show. It consist of two computers on a rail and bulb in the middle. We wanted to explore the recognition of machine and human. Based on the distances between laptops from the bulb in the middle, we calculate the the movement of a red ball traveling between two monitors, and when the ball pass though the middle the red bulb turn on. Audience recognize as if actually the ball travels in the air between the laptops. 
+![Demo](/img/Youjin.gif)
 
-![alt text](https://static1.squarespace.com/static/59b1aee2e5dd5b52641a377a/5bf397b289858389671a4257/5bf3994b21c67c50958169c3/1542691152459/diagram.png "Diagram 0")
+One Zero is Interactive Kinetic Art Installation.
+
+The project implies the coexistence of the human cognitive process and machine perception.
+
+
+The red ball travels between two laptops and the bulb lights on when the ball passes through right in the middle of the virtual world.
+
+The audience can move laptops back and forth, and their positions get updated to the virtual world in real-time.
+
+The installation shows the trace of the red ball in mixed reality. 
+
+
+
+![Show](/img/show.gif)
+
+## System 
+Unity, Arduino, Ultrasonic, Bluetooth, I2C communication
+
+![Schematic](/img/diagram.png)
+
+Two ultrasonic sensors calculate the distances between each laptop and the pole in the middle and send them to Arduino.
+
+The master Arduino board collects the positions of two walls and a ball in the unity and controls the light bulb.
+
+Each Arduino communicates with their ultrasonic sensor and unity via Bluetooth, and two Arduinos communicate with each other via I2C.
+Unity3D physics engine calculates the movement of the ball with the distance information.
